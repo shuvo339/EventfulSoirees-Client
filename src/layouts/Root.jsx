@@ -1,8 +1,11 @@
+import { Outlet } from "react-router-dom";
 
 const Root = () => {
     return (
         <div>
-            <h2 className="btn bg-black">Hllooooo</h2>
+            <div className="max-w-6xl mx-auto px-2">
+                <Outlet></Outlet>
+            </div>
         </div>
     );
 };
