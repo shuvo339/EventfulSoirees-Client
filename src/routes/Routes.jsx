@@ -3,7 +3,7 @@ import {
   } from "react-router-dom";
 import Root from "../layouts/Root";
 import Errorpage from "../pages/ErrorPage/Errorpage";
-import Home from "../pages/Home/Home";
+import Home from "../pages/Home/Home/Home";
 import Login from './../pages/Login/Login';
 import Register from './../pages/Register/Register';
 import PrivateRoute from './PrivateRoute';
