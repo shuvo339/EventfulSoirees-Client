@@ -1,10 +1,10 @@
-
+import logo from '../../assets/logo.png'
 const Footer = () => {
     return (
         <footer className="mt-8  bg-[#B8E0D2]">
         <div className="md:footer flex flex-col md:flex-row md:justify-around items-center justify-end text-center md:gap-0 gap-6 px-4 md:px-28 py-10 text-base-content">
             <aside className="flex items-center justify-center flex-col">
-               <h2 className="text-xl font-bold">Eventful Soirees</h2>
+               <img className='w-56' src={logo} alt="" />
                <p className='text-center'>Providing reliable services since 2022</p>
            
             <div className="grid grid-flow-col gap-8 items-center justify-center mt-6">

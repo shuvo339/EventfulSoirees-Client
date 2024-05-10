@@ -3,6 +3,7 @@ import UseAuth from "../../hooks/UseAuth";
 import 'react-tooltip/dist/react-tooltip.css'
 import { Tooltip } from 'react-tooltip'
 import { useEffect, useState } from "react";
+import logo from '../../assets/logo.png'
 
 const Navbar = () => {
     const {logOut, user} = UseAuth();
@@ -50,7 +51,7 @@ const Navbar = () => {
                     </li>
                 </ul>
                 </div>
-                <Link to="/" className="font-bold text-xl">Eventful Soirees</Link>
+                <Link to="/" className="font-bold text-xl"><img className="h-16" src={logo} alt="" /></Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal">
@@ -77,7 +78,7 @@ const Navbar = () => {
               <Tooltip id="my-tooltip" />
               </div>
         </div>
-              <button onClick={handleLogout} className="btn bg-[#7E5E60] text-white">Logout</button>
+              <button onClick={handleLogout} className="btn bg-emerald-500 border-0  text-white">Logout</button>
               
             {/* Theme Changer  */}
             <label className="swap swap-rotate">
@@ -90,7 +91,7 @@ const Navbar = () => {
             </label>
           </div>:
           <div className="flex items-center justify-center gap-3">
-              <Link to='/login'><button className="btn bg-[#10A37F] border-0 font-semibold"> Login</button></Link>
+              <Link to='/login'><button className="btn bg-emerald-500 border-0 font-semibold"> Login</button></Link>
               
             {/* Theme Changer  */}
             <label className="swap swap-rotate">
