@@ -1,0 +1,43 @@
+[
+    {
+      "question": "How do I create an account?",
+      "answer": "To create an account, click on the 'Sign Up' button on the homepage. Enter your personal information, set a password, and submit the form. You will receive a verification email to confirm your email address."
+    },
+    {
+      "question": "How do I list my service on the platform?",
+      "answer": "After creating an account, navigate to 'List a Service' in your dashboard. Fill out the service details, including the service name, description, price, and an image. Submit the information, and after approval, your service will be visible on the platform."
+    },
+    {
+      "question": "How can I book a service?",
+      "answer": "To book a service, browse the list of available services. Select the service you're interested in, then click 'Book Now.' Follow the prompts to complete the booking, including payment if required."
+    },
+    {
+      "question": "Can I update or delete my service after listing it?",
+      "answer": "Yes, you can update or delete your service from your account dashboard. Go to 'My Services,' select the service you want to update or delete, and choose the appropriate action."
+    },
+    {
+      "question": "What payment methods are accepted?",
+      "answer": "We accept major credit/debit cards and online payment platforms like PayPal. During the booking process, you'll have the option to choose your preferred payment method."
+    },
+    {
+      "question": "How can I contact customer support?",
+      "answer": "If you need assistance, you can contact our support team through the 'Contact Us' page. You can also email us at support@eventfulsoirees.com or call our customer service number."
+    },
+    {
+      "question": "Can I cancel a booking, and what is the cancellation policy?",
+      "answer": "You can cancel a booking from your account dashboard. Navigate to 'My Bookings,' select the booking you wish to cancel, and choose 'Cancel.' Please refer to our cancellation policy for details on refunds and timelines."
+    },
+    {
+      "question": "What types of services are available on the platform?",
+      "answer": "We offer a wide range of services for events, including event planning, catering, photography, live music, and more. You can explore the available services on our homepage or use the search feature to find specific services."
+    },
+    {
+      "question": "How do I leave a review for a service?",
+      "answer": "After using a service, you can leave a review by going to 'My Bookings.' Select the booking you want to review, click 'Leave Review,' and rate the service. Your feedback helps other users make informed decisions."
+    },
+    {
+      "question": "Is my personal information secure on the platform?",
+      "answer": "Yes, we take data security seriously. We use encryption and secure protocols to protect your personal information. Please refer to our privacy policy for more details on data protection and usage."
+    }
+  ]
+  
