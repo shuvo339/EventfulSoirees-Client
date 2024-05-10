@@ -17,7 +17,7 @@ const PopularServiceCard = ({ service }) => {
       <div className="w-1/2 space-y-4">
         <h2 className="text-3xl font-semibold">{serviceName}</h2>
         <p className="opacity-95 min-h-16">{description}</p>
-        <p className="text-xl"><span className="opacity-85">Service Price:</span> <span className="font-semibold">${price}</span></p>
+        <p className="text-xl"><span className="opacity-85">Service Price: </span> <span className="font-semibold">${price}</span></p>
         <div className="flex gap-4 items-center py-2">
           <div className="avatar">
             <div className="w-16 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
