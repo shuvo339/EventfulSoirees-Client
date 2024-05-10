@@ -1,5 +1,8 @@
+import { Link } from "react-router-dom";
+
 const ServiceCard = ({ service }) => {
   const {
+    _id,
     serviceName,
     serviceArea,
     imgURL,
@@ -36,7 +39,7 @@ const ServiceCard = ({ service }) => {
         </h2>
       </div>
     </div>
-      <button className="btn bg-emerald-400 w-full">View Details</button>
+      <Link to={`/details/${_id}`}><button className="btn bg-emerald-400 w-full mt-3">View Details</button></Link>
     </div>
   );
 };

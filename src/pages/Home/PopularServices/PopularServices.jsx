@@ -22,7 +22,7 @@ const PopularServices = () => {
             </div>
 
             <div className="flex justify-center items-center mt-8">
-                <Link to="/services"><button className="btn bg-emerald-500 w-2/6 font-semibold text-lg">Show All</button></Link>
+                <Link to="/services"><button className="btn bg-emerald-500 w-full font-semibold text-lg ">Show All</button></Link>
             </div>
         </div>
     );

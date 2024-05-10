@@ -9,6 +9,8 @@ import Register from './../pages/Register/Register';
 import PrivateRoute from './PrivateRoute';
 import AddService from "../pages/AddService/AddService";
 import AllServices from "../pages/AllServices/AllServices";
+import ServiceDetails from './../pages/ServiceDetails/ServiceDetails';
+import Bookings from './../pages/Bookings/Bookings';
 
  export const router = createBrowserRouter([
     {
@@ -36,6 +38,16 @@ import AllServices from "../pages/AllServices/AllServices";
           path: "/services",
           element:<AllServices></AllServices>,
           loader: ()=>fetch("http://localhost:5000/services")
+        },
+        {
+          path: "/details/:id",
+          element:<ServiceDetails></ServiceDetails>,
+          loader: ({params})=>fetch(`http://localhost:5000/services/${params.id}`)
+        },
+        {
+          path: "/bookings/:id",
+          element:<Bookings></Bookings>,
+          loader: ({params})=>fetch(`http://localhost:5000/services/${params.id}`)
         },
       ],
     },
