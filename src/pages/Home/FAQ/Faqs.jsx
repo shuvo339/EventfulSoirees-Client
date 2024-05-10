@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import faqImg from '../../../assets/faq.png'
+import faqImg from '../../../assets/faq.png';
 const Faqs = () => {
     const [faqs, setFaqs]=useState([]);
     useEffect(()=>{
