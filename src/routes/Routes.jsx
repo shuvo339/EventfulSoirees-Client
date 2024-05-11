@@ -11,6 +11,8 @@ import AddService from "../pages/AddService/AddService";
 import AllServices from "../pages/AllServices/AllServices";
 import ServiceDetails from './../pages/ServiceDetails/ServiceDetails';
 import Bookings from './../pages/Bookings/Bookings';
+import ManageService from './../pages/ManageService/ManageService';
+import UpdateService from './../pages/UpdateService/UpdateService';
 
  export const router = createBrowserRouter([
     {
@@ -47,6 +49,15 @@ import Bookings from './../pages/Bookings/Bookings';
         {
           path: "/bookings/:id",
           element:<Bookings></Bookings>,
+          loader: ({params})=>fetch(`http://localhost:5000/services/${params.id}`)
+        },
+        {
+          path: "/manage",
+          element:<ManageService></ManageService>,
+        },
+        {
+          path: "/update/:id",
+          element:<UpdateService></UpdateService>,
           loader: ({params})=>fetch(`http://localhost:5000/services/${params.id}`)
         },
       ],
