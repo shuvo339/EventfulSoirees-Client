@@ -45,25 +45,25 @@ import ServiceToDo from './../pages/ServiceToDo/ServiceToDo';
         },
         {
           path: "/details/:id",
-          element:<ServiceDetails></ServiceDetails>,
+          element:<PrivateRoute><ServiceDetails></ServiceDetails></PrivateRoute>,
           loader: ({params})=>fetch(`http://localhost:5000/services/${params.id}`)
         },
         {
           path: "/bookings/:id",
-          element:<Bookings></Bookings>,
+          element:<PrivateRoute><Bookings></Bookings></PrivateRoute>,
           loader: ({params})=>fetch(`http://localhost:5000/services/${params.id}`)
         },
         {
           path: "/manage",
-          element:<ManageService></ManageService>,
+          element:<PrivateRoute><ManageService></ManageService></PrivateRoute>,
         },
         {
           path: "/todo",
-          element:<ServiceToDo></ServiceToDo>,
+          element:<PrivateRoute><ServiceToDo></ServiceToDo></PrivateRoute>,
         },
         {
           path: "/booked-service",
-          element:<BookedServices></BookedServices>,
+          element:<PrivateRoute><BookedServices></BookedServices></PrivateRoute>,
         },
         {
           path: "/update/:id",

@@ -3,6 +3,7 @@ import toast from "react-hot-toast";
 import UseAuth from "../../hooks/UseAuth";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { Helmet } from "react-helmet-async";
 
 const Login = () => {
     const [showPassword, setShowPassword] = useState(false);
@@ -41,7 +42,9 @@ const Login = () => {
  
     return (
         <div className="card shrink-0 w-3/4 md:w-1/2 mx-auto shadow-2xl bg-base-100 mt-8">
-    
+          <Helmet>
+                <title>EventfulSoirees | Login</title>
+            </Helmet>
           <h2 className="text-2xl md:text-4xl font-semibold text-center">Login</h2>
     <form onSubmit={handleLogin} className="card-body space-y-4">
       <div className="form-control">

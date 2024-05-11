@@ -1,7 +1,7 @@
 import { useLoaderData } from "react-router-dom";
 import UseAuth from "../../hooks/UseAuth";
 import DatePicker from "react-datepicker";
-
+import { Helmet } from "react-helmet-async";
 import "react-datepicker/dist/react-datepicker.css";
 import { useState } from "react";
 import axios from "axios";
@@ -48,6 +48,9 @@ const Bookings = () => {
     }
   return (
     <div className="my-10">
+      <Helmet>
+                <title>EventfulSoirees | Booking</title>
+            </Helmet>
       <h2 className="text-4xl font-semibold text-center">Purchase Now!</h2>
 
       <form onSubmit={handleBooking}>

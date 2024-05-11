@@ -3,6 +3,7 @@ import toast from "react-hot-toast";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 import UseAuth from "../../hooks/UseAuth";
+import { Helmet } from "react-helmet-async";
 
 const Register = () => {
     const { googleLogin} = UseAuth();
@@ -61,6 +62,9 @@ const Register = () => {
       }
     return (
       <div className="card shrink-0 w-3/4 md:w-1/2 mx-auto shadow-2xl bg-base-100 mb-2 mt-12">
+        <Helmet>
+                <title>EventfulSoirees | Register</title>
+          </Helmet>
         <h2 className="text-2xl md:text-4xl font-semibold text-center">
           Register
         </h2>

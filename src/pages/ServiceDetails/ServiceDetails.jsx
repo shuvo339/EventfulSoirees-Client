@@ -1,4 +1,5 @@
 import { Link, useLoaderData } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 const ServiceDetails = () => {
   const service = useLoaderData();
@@ -14,6 +15,9 @@ const ServiceDetails = () => {
   } = service;
   return (
     <div className="my-10">
+           <Helmet>
+                <title>EventfulSoirees | Details</title>
+            </Helmet>
       <div className="flex gap-8">
         <span className="text-3xl">Service Provider:</span>
         <div>

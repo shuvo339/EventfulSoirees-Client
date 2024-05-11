@@ -1,6 +1,7 @@
 import axios from "axios";
 import Swal from "sweetalert2";
 import { useLoaderData } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 const UpdateService = () => {
     const service = useLoaderData();
@@ -38,6 +39,9 @@ const UpdateService = () => {
     }
     return (
         <div className="mb-6">
+            <Helmet>
+                <title>EventfulSoirees | Update</title>
+            </Helmet>
         <div className="bg-emerald-500 bg-blend-overlay bg-opacity-15 w-full md:w-3/5 lg:w-3/5 shadow-2xl mx-auto mt-8 p-6 md:p-10 rounded-md ">
             <h2 className="text-4xl font-bold mx-auto w-full text-center pb-6 bg-gradient-to-r from-stone-700 to-stone-400 inline-block text-transparent bg-clip-text">Update Service</h2>
             <form onSubmit={handleUpdateService} className="w-full">

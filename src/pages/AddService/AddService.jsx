@@ -1,6 +1,7 @@
 import Swal from "sweetalert2";
 import axios from "axios";
 import UseAuth from "../../hooks/UseAuth";
+import { Helmet } from "react-helmet-async";
 
 const AddService = () => {
     const {user}=UseAuth();
@@ -33,6 +34,9 @@ const AddService = () => {
     }
     return (
          <div className="mb-6">
+            <Helmet>
+                <title>EventfulSoirees | Add</title>
+            </Helmet>
             <div style={{backgroundImage: `url("https://i.ibb.co/C8pQ9CT/add-bg.jpg")`}} className="bg-black bg-blend-overlay bg-opacity-60 w-full md:w-3/5 lg:w-3/5 shadow-2xl mx-auto mt-8 p-6 md:p-10 rounded-md ">
                 <h2 className="text-4xl font-bold mx-auto w-full text-center pb-6 bg-gradient-to-r from-stone-700 via-slate-100 to-stone-400 inline-block text-transparent bg-clip-text">Add New Service</h2>
                 <form onSubmit={handleAddService} className="w-full">

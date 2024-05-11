@@ -2,6 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import UseAuth from "../../hooks/UseAuth";
 // import Swal from "sweetalert2";
+import { Helmet } from "react-helmet-async";
 
 const BookedServices = () => {
     const {user} = UseAuth();
@@ -22,6 +23,9 @@ const BookedServices = () => {
     // }
     return (
         <div className="my-6">
+            <Helmet>
+                <title>EventfulSoirees | Booked</title>
+            </Helmet>
             <h2 className="text-3xl font-semibold text-center">My Booked Services List</h2>
             <div>
             <table className="table table-xs md:table-md lg:table-lg">
