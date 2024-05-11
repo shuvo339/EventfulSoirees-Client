@@ -18,6 +18,7 @@ const Bookings = () => {
     price,
     providerName,
     providerEmail,
+    serviceArea
   } = service;
 
   const handleBooking=(e)=>{
@@ -31,7 +32,7 @@ const Bookings = () => {
     const instructions = form.instructions.value;
     const status = "Pending";
     const booking ={
-      serviceId, serviceName, serviceImage, providerEmail, providerName, price, userEmail, userName, serviceDate, instructions, status
+      serviceId, serviceName, serviceImage, providerEmail, providerName, price, userEmail, userName, serviceDate, instructions, status, serviceArea
     }
     axios.post('http://localhost:5000/bookings', booking)
     .then(data=>{

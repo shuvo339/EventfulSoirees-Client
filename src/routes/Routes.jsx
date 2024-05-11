@@ -13,6 +13,7 @@ import ServiceDetails from './../pages/ServiceDetails/ServiceDetails';
 import Bookings from './../pages/Bookings/Bookings';
 import ManageService from './../pages/ManageService/ManageService';
 import UpdateService from './../pages/UpdateService/UpdateService';
+import BookedServices from './../pages/BookedServices/BookedServices';
 
  export const router = createBrowserRouter([
     {
@@ -54,6 +55,10 @@ import UpdateService from './../pages/UpdateService/UpdateService';
         {
           path: "/manage",
           element:<ManageService></ManageService>,
+        },
+        {
+          path: "/booked-service",
+          element:<BookedServices></BookedServices>,
         },
         {
           path: "/update/:id",

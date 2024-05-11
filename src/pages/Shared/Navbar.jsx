@@ -46,7 +46,7 @@ const Navbar = () => {
                     <ul className="p-2">
                     <li><NavLink className={({isActive})=>isActive? 'px-3 py-2 rounded-md font-semibold underline':'px-3 py-2 rounded-md'} to="/add">Add Service</NavLink></li>
                     <li><NavLink className={({isActive})=>isActive? 'px-3 py-2 rounded-md font-semibold underline':'px-3 py-2 rounded-md'} to="/manage">Manage Service</NavLink></li>
-                    <li><NavLink className={({isActive})=>isActive? 'px-3 py-2 rounded-md font-semibold underline':'px-3 py-2 rounded-md'} to="/booked">Booked-Services</NavLink></li>
+                    <li><NavLink className={({isActive})=>isActive? 'px-3 py-2 rounded-md font-semibold underline':'px-3 py-2 rounded-md'} to="/booked-service">Booked-Services</NavLink></li>
                     <li><NavLink className={({isActive})=>isActive? 'px-3 py-2 rounded-md font-semibold underline':'px-3 py-2 rounded-md'} to="/todo">Service-To-Do</NavLink></li>
                     </ul>
                     </li>
@@ -64,7 +64,7 @@ const Navbar = () => {
                     <ul className="p-2 w-48 z-40">
                     <li><NavLink className={({isActive})=>isActive? 'px-3 py-2 rounded-md font-semibold underline':'px-3 py-2 rounded-md'} to="/add">Add Service</NavLink></li>
                     <li><NavLink className={({isActive})=>isActive? 'px-3 py-2 rounded-md font-semibold underline':'px-3 py-2 rounded-md'} to="/manage">Manage Service</NavLink></li>
-                    <li><NavLink className={({isActive})=>isActive? 'px-3 py-2 rounded-md font-semibold underline':'px-3 py-2 rounded-md'} to="/booked">Booked-Services</NavLink></li>
+                    <li><NavLink className={({isActive})=>isActive? 'px-3 py-2 rounded-md font-semibold underline':'px-3 py-2 rounded-md'} to="/booked-service">Booked-Services</NavLink></li>
                     <li><NavLink className={({isActive})=>isActive? 'px-3 py-2 rounded-md font-semibold underline':'px-3 py-2 rounded-md'} to="/todo">Service-To-Do</NavLink></li>
                     </ul>
                     </details>
