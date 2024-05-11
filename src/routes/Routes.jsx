@@ -14,6 +14,7 @@ import Bookings from './../pages/Bookings/Bookings';
 import ManageService from './../pages/ManageService/ManageService';
 import UpdateService from './../pages/UpdateService/UpdateService';
 import BookedServices from './../pages/BookedServices/BookedServices';
+import ServiceToDo from './../pages/ServiceToDo/ServiceToDo';
 
  export const router = createBrowserRouter([
     {
@@ -55,6 +56,10 @@ import BookedServices from './../pages/BookedServices/BookedServices';
         {
           path: "/manage",
           element:<ManageService></ManageService>,
+        },
+        {
+          path: "/todo",
+          element:<ServiceToDo></ServiceToDo>,
         },
         {
           path: "/booked-service",

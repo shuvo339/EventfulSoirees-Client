@@ -1,7 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import UseAuth from "../../hooks/UseAuth";
-import { Link } from "react-router-dom";
 // import Swal from "sweetalert2";
 
 const BookedServices = () => {
@@ -41,11 +40,20 @@ const BookedServices = () => {
                <tbody>
    {
        services.map((service, idx)=>
-                   <tr key={service._id} className="hover">
+                   <tr key={service._id} className={`hover:bg-emerald-200 rounded-lg text-center my-2 ${
+                    service.status === 'Pending' &&
+                    'text-blue-500 bg-blue-100/60'
+                  } ${
+                      service.status === 'Working' &&
+                    'text-emerald-500 bg-emerald-100/60'
+                  } ${
+                      service.status === 'Completed' &&
+                    'text-pink-500 bg-pink-100/60'
+                  } h-1 w-4`}>
                        <td>{idx+1}</td>
                        <td>{service.serviceName}</td>
                        <td>{service.serviceArea}</td>
-                       <td>{service.price}</td>
+                       <td>${service.price}</td>
                        <td>{service.providerName}</td>
                        <td>{service.status}</td>
                        {/* <td><Link to={`/details/${service._id}`}><button className="btn btn-xs sm:btn-sm md:btn-md">View Details</button></Link></td> */}
