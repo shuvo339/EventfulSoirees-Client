@@ -4,6 +4,7 @@ import UseAuth from "../../hooks/UseAuth";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { Helmet } from "react-helmet-async";
+import axios from "axios";
 
 const Login = () => {
     const [showPassword, setShowPassword] = useState(false);
@@ -18,9 +19,15 @@ const Login = () => {
       signIn(email, password)
       .then(()=>{
         toast.success("You have logged in successfully")
-        setTimeout(()=>{
-          navigate(location?.state ? location.state : '/')
-        }, 3000)
+        const user={email};
+        axios.post('http://localhost:5000/jwt', user, {withCredentials:true})
+        .then(data=>{
+          if(data.data.success){
+            setTimeout(()=>{
+              navigate(location?.state ? location.state : '/')
+            }, 3000)
+          }
+        })
       })
       .catch(error=>{
         toast.error(error.message.split(":")[1])

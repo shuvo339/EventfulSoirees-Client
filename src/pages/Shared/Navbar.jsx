@@ -4,12 +4,15 @@ import 'react-tooltip/dist/react-tooltip.css'
 import { Tooltip } from 'react-tooltip'
 import { useEffect, useState } from "react";
 import logo from '../../assets/logo.png'
+import axios from "axios";
 
 const Navbar = () => {
     const {logOut, user} = UseAuth();
     const handleLogout=()=>{ 
         logOut()
-          .then()
+          .then(()=>{
+            axios('http://localhost:5000/logout', {withCredentials:true})
+          })
           .catch()
         }
 

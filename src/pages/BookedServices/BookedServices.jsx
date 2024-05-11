@@ -9,7 +9,7 @@ const BookedServices = () => {
     const [services, setServices]=useState([]);
     
     useEffect(()=>{
-        axios(`http://localhost:5000/bookings?email=${user?.email}`)
+        axios(`http://localhost:5000/bookings?email=${user?.email}`, {withCredentials:true})
         .then(data=>{
             setServices(data.data)
         })

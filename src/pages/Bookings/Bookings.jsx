@@ -1,16 +1,23 @@
-import { useLoaderData } from "react-router-dom";
 import UseAuth from "../../hooks/UseAuth";
 import DatePicker from "react-datepicker";
 import { Helmet } from "react-helmet-async";
 import "react-datepicker/dist/react-datepicker.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 import Swal from "sweetalert2";
+import { useParams } from "react-router-dom";
 
 const Bookings = () => {
     const [startDate, setStartDate] = useState(new Date());
     const {user} = UseAuth();
-  const service = useLoaderData();
+  const [service, setService]=useState({});
+  const {id} = useParams();
+  useEffect(()=>{
+    axios(`http://localhost:5000/services/${id}`, {withCredentials:true})
+    .then(data=>{
+      setService(data.data)
+    })
+  }, [])
   const {
     _id,
     serviceName,
@@ -34,7 +41,7 @@ const Bookings = () => {
     const booking ={
       serviceId, serviceName, serviceImage, providerEmail, providerName, price, userEmail, userName, serviceDate, instructions, status, serviceArea
     }
-    axios.post('http://localhost:5000/bookings', booking)
+    axios.post('http://localhost:5000/bookings', booking, {withCredentials:true})
     .then(data=>{
       if(data.data.insertedId){
           Swal.fire({

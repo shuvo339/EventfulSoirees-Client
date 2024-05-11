@@ -1,8 +1,17 @@
-import { Link, useLoaderData } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 const ServiceDetails = () => {
-  const service = useLoaderData();
+  const [service, setService]=useState({});
+  const {id} = useParams();
+  useEffect(()=>{
+    axios(`http://localhost:5000/services/${id}`, {withCredentials:true})
+    .then(data=>{
+      setService(data.data)
+    })
+  }, [])
   const {
     _id,
     serviceName,

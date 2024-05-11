@@ -1,8 +1,15 @@
-# React + Vite
+# Assignment_ID: assignment_category_0002
+# Category: Event Management Services
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Eventful-Soirees
 
-Currently, two official plugins are available:
+# Overview of Eventful Soirees as a service-sharing web application
+* Users can find wide range of event management services and search specific one
+* Users can add, update, and delete their own services.
+* Detailed service information is available for each listing.
+* Booking functionality to reserve specific services.
+* Capability to update the status of one's own service.
+* Mobile and tablet-friendly design for on-the-go reading.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## [Live Link](https://eventful-soirees.web.app/)
+
