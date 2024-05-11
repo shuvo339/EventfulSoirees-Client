@@ -13,7 +13,16 @@ const ServiceDetails = () => {
     providerImage,
   } = service;
   return (
-    <div className="flex flex-row-reverse gap-12 shadow-lg rounded-lg p-6 my-10">
+    <div className="my-10">
+      <div className="flex gap-8">
+        <span className="text-3xl">Service Provider:</span>
+        <div>
+        <img className="rounded-lg" src={providerImage} alt="" />
+        <h2 className="text-2xl">Name: {providerName}</h2>
+        <p>Service Area: {serviceArea}</p>
+        </div>
+      </div>
+        <div className="flex flex-row-reverse gap-12 shadow-lg rounded-lg p-6 my-10">
       <img
         className="rounded-tl-[100px] w-1/2 rounded-br-[50px] border-4"
         src={imgURL}
@@ -47,6 +56,7 @@ const ServiceDetails = () => {
         <button className="btn bg-emerald-400 w-full mt-3">Book Now</button>
       </Link>
       </div>
+    </div>
     </div>
   );
 };
