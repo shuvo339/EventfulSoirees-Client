@@ -25,7 +25,7 @@ const UpdateService = () => {
         const service = {
             serviceName, serviceArea, imgURL, price, description
         }
-        axios.put(`http://localhost:5000/services/${_id}`, service)
+        axios.put(`https://b9-a11-eventful-soirees-server.vercel.app/services/${_id}`, service)
         .then(data=>{
             if(data.data.modifiedCount>0){
                 Swal.fire({

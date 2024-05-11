@@ -11,7 +11,7 @@ const Navbar = () => {
     const handleLogout=()=>{ 
         logOut()
           .then(()=>{
-            axios('http://localhost:5000/logout', {withCredentials:true})
+            axios('https://b9-a11-eventful-soirees-server.vercel.app/logout', {withCredentials:true})
           })
           .catch()
         }

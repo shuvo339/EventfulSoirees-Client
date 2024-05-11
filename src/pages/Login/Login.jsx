@@ -20,11 +20,11 @@ const Login = () => {
       .then(()=>{
         toast.success("You have logged in successfully")
         const user={email};
-        axios.post('http://localhost:5000/jwt', user, {withCredentials:true})
+        axios.post('https://b9-a11-eventful-soirees-server.vercel.app/jwt', user, {withCredentials:true})
         .then(data=>{
           if(data.data.success){
             setTimeout(()=>{
-              navigate(location?.state ? location.state : '/')
+              navigate(location?.state ? location.state : '/', {replace:true})
             }, 3000)
           }
         })
@@ -36,11 +36,16 @@ const Login = () => {
 
     const handleGoogleLogin=()=>{
       googleLogin()
-      .then(()=>{
+      .then((res)=>{
         toast.success("You have logged in successfully")
-        setTimeout(()=>{
-          navigate(location?.state ? location.state : '/')
-        }, 3000)
+        axios.post('https://b9-a11-eventful-soirees-server.vercel.app/jwt', {email: res?.user?.email}, {withCredentials:true})
+        .then(data=>{
+          if(data.data.success){
+            setTimeout(()=>{
+              navigate(location?.state ? location.state : '/', {replace:true})
+            }, 3000)
+          }
+        })
       })
       .catch(error=>{
         toast.error(error.message.split(":")[1])

@@ -13,7 +13,7 @@ const Bookings = () => {
   const [service, setService]=useState({});
   const {id} = useParams();
   useEffect(()=>{
-    axios(`http://localhost:5000/services/${id}`, {withCredentials:true})
+    axios(`https://b9-a11-eventful-soirees-server.vercel.app/services/${id}`, {withCredentials:true})
     .then(data=>{
       setService(data.data)
     })
@@ -41,7 +41,7 @@ const Bookings = () => {
     const booking ={
       serviceId, serviceName, serviceImage, providerEmail, providerName, price, userEmail, userName, serviceDate, instructions, status, serviceArea
     }
-    axios.post('http://localhost:5000/bookings', booking, {withCredentials:true})
+    axios.post('https://b9-a11-eventful-soirees-server.vercel.app/bookings', booking, {withCredentials:true})
     .then(data=>{
       if(data.data.insertedId){
           Swal.fire({

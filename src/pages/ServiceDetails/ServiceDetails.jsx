@@ -7,7 +7,7 @@ const ServiceDetails = () => {
   const [service, setService]=useState({});
   const {id} = useParams();
   useEffect(()=>{
-    axios(`http://localhost:5000/services/${id}`, {withCredentials:true})
+    axios(`https://b9-a11-eventful-soirees-server.vercel.app/services/${id}`, {withCredentials:true})
     .then(data=>{
       setService(data.data)
     })

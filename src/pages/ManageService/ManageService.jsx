@@ -8,7 +8,7 @@ const ManageService = () => {
     const {user} = UseAuth();
     const [services, setServices]=useState([]);
     useEffect(()=>{
-        axios(`http://localhost:5000/services?email=${user?.email}`)
+        axios(`https://b9-a11-eventful-soirees-server.vercel.app/services?email=${user?.email}`)
         .then(data=>{
             setServices(data.data)
         })

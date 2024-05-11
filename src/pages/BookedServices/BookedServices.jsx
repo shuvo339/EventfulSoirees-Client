@@ -9,7 +9,7 @@ const BookedServices = () => {
     const [services, setServices]=useState([]);
     
     useEffect(()=>{
-        axios(`http://localhost:5000/bookings?email=${user?.email}`, {withCredentials:true})
+        axios(`https://b9-a11-eventful-soirees-server.vercel.app/bookings?email=${user?.email}`, {withCredentials:true})
         .then(data=>{
             setServices(data.data)
         })

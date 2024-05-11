@@ -9,7 +9,7 @@ const ServiceToDo = () => {
   const [services, setServices] = useState([]);
 
   useEffect(() => {
-    axios(`http://localhost:5000/booked?email=${user?.email}`, {withCredentials:true})
+    axios(`https://b9-a11-eventful-soirees-server.vercel.app/booked?email=${user?.email}`, {withCredentials:true})
     .then((data) => {
       setServices(data.data);
     });
@@ -17,7 +17,7 @@ const ServiceToDo = () => {
 
   const handleStatus = (id, status) => {
     axios
-      .patch(`http://localhost:5000/bookings/${id}`, { status }, {withCredentials:true})
+      .patch(`https://b9-a11-eventful-soirees-server.vercel.app/bookings/${id}`, { status }, {withCredentials:true})
       .then((data) => {
         if (data.data.modifiedCount > 0) {
           toast.success(`Status is being changed to ${status}`);

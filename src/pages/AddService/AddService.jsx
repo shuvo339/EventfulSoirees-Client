@@ -20,7 +20,7 @@ const AddService = () => {
             serviceName, serviceArea, imgURL, price, description, providerName, providerImage, providerEmail
         }
     console.log(service);
-        axios.post('http://localhost:5000/services', service)
+        axios.post('https://b9-a11-eventful-soirees-server.vercel.app/services', service)
         .then(data=>{
             if(data.data.insertedId){
                 Swal.fire({

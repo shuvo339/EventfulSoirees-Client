@@ -22,7 +22,7 @@ const ManageServiceCard = ({service, services, setServices}) => {
         confirmButtonText: "Yes, delete it!"
       }).then((result) => {
         if (result.isConfirmed) {
-            axios.delete(`http://localhost:5000/services/${id}`)
+            axios.delete(`https://b9-a11-eventful-soirees-server.vercel.app/services/${id}`)
             .then(data=>{
                 if(data.data.deletedCount>0){
                     Swal.fire({

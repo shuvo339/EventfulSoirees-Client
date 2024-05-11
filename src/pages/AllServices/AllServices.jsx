@@ -7,7 +7,7 @@ const AllServices = () => {
     const [services, setServices] = useState([]);
     const [search, setSearch]=useState('');
     useEffect(()=>{
-        axios(`http://localhost:5000/all-services?search=${search}`)
+        axios(`https://b9-a11-eventful-soirees-server.vercel.app/all-services?search=${search}`)
         .then(data=>{
             setServices(data.data)
         })
