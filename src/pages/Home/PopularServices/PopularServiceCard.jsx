@@ -11,13 +11,13 @@ const PopularServiceCard = ({ service }) => {
     providerImage,
   } = service;
   return (
-    <div className="flex gap-12 shadow-lg rounded-lg p-6">
+    <div className="flex md:flex-row flex-col gap-4 md:gap-12 shadow-lg rounded-lg p-4">
       <img
-        className="rounded-tl-[100px] w-1/2 rounded-br-[50px] border-4"
+        className="rounded-tl-[100px] md:w-1/2 rounded-br-[50px] object-cover h-72 border-4"
         src={imgURL}
         alt=""
       />
-      <div className="w-1/2 space-y-4">
+      <div className="md:w-1/2 space-y-4">
         <h2 className="text-3xl font-semibold">{serviceName}</h2>
         <p className="opacity-95 min-h-16">{description}</p>
         <p className="text-xl"><span className="opacity-85">Service Price: </span> <span className="font-semibold">${price}</span></p>
@@ -29,7 +29,7 @@ const PopularServiceCard = ({ service }) => {
           </div>
           <h2><span className="opacity-85">Service Provider</span> <br /><span className=" text-xl font-semibold">{providerName}</span></h2>
         </div>
-        <Link to={`/details/${_id}`}><button className="mt-3 btn bg-emerald-400 w-1/2">View Details</button></Link>
+        <Link to={`/details/${_id}`}><button className="mt-3 btn bg-emerald-400 w-full md:w-1/2">View Details</button></Link>
       </div>
     </div>
   );

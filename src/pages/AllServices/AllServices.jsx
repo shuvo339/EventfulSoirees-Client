@@ -2,27 +2,36 @@ import ServiceCard from "./ServiceCard";
 import { Helmet } from "react-helmet-async";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import Lottie from "lottie-react";
+import animationData from "../../assets/spinner.json";
 
 const AllServices = () => {
     const [services, setServices] = useState([]);
     const [search, setSearch]=useState('');
+    const [loading, setLoading]=useState(true);
+
     useEffect(()=>{
         axios(`https://b9-a11-eventful-soirees-server.vercel.app/all-services?search=${search}`)
         .then(data=>{
             setServices(data.data)
+            setLoading(false)
         })
     }, [search])
     const handleSearch=e=>{
         e.preventDefault();
         const text= e.target.search.value;
         setSearch(text);
+    }
 
+    if(loading){
+        return <Lottie className="w-48 mx-auto mt-16" animationData={animationData} />
     }
     return (
         <div className="my-10">
             <Helmet>
                 <title>EventfulSoirees | Services</title>
             </Helmet>
+            
             <form onSubmit={handleSearch}>
             <div className="w-1/3 mb-6 mx-auto">
                 <label className="input input-bordered flex items-center gap-2">
