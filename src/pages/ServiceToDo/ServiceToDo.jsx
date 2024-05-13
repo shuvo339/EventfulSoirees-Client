@@ -35,14 +35,14 @@ const ServiceToDo = () => {
 }
 
   return (
-    <div className="my-6">
+    <div className="my-8">
         <Helmet>
                 <title>EventfulSoirees | To-Do</title>
             </Helmet>
-      <h2 className="text-3xl font-semibold text-center">
-        My Services To-Do List
-      </h2>
-      <div>
+            <div className="h-20 bg-blue-100 flex justify-center items-center">
+            <h2 className="text-3xl font-semibold">My Services To-Do List</h2>
+            </div>
+      <div className="mt-8 min-h-60">
       {
           services.length < 1 && <h2 className="text-center text-2xl font-semibold my-6  text-red-500 ">You have not booked any service yet!</h2>
       }
@@ -55,6 +55,7 @@ const ServiceToDo = () => {
               <th>Service Area</th>
               <th>Price</th>
               <th>Service Taker</th>
+              <th>Deadline</th>
               <th>Status</th>
             </tr>
           </thead>
@@ -63,14 +64,14 @@ const ServiceToDo = () => {
             services?.map((service, idx) => (
               <tr
                 key={service._id}
-                className={`hover:bg-emerald-200 rounded-lg text-center my-2 ${
-                  service.status === "Pending" && "text-blue-500 bg-blue-100/60"
+                className={`hover:bg-emerald-100 rounded-lg text-center my-2 ${
+                  service.status === "Pending" && "text-amber-600 bg-amber-50"
                 } ${
                   service.status === "Working" &&
-                  "text-emerald-500 bg-emerald-100/60"
+                  "text-emerald-600 bg-emerald-50"
                 } ${
                   service.status === "Completed" &&
-                  "text-pink-500 bg-pink-100/60"
+                  "text-pink-600 bg-pink-50"
                 } h-1 w-4`}
               >
                 <td>{idx + 1}</td>
@@ -78,6 +79,7 @@ const ServiceToDo = () => {
                 <td>{service.serviceArea}</td>
                 <td>${service.price}</td>
                 <td>{service.userName}</td>
+                <td>{new Date(service.serviceDate).toLocaleString(undefined, { year: 'numeric', month: '2-digit', day: '2-digit' })}</td>
                 <td>
                   <select
                     className="bg-transparent outline-0"

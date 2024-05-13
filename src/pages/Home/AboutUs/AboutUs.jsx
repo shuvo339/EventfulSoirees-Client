@@ -4,7 +4,7 @@ const AboutUs = () => {
         <div className="md:mt-24 mt-12 px-2"> 
             <div>
             <h2 className="text-3xl md:text-5xl font-bold">About Us</h2>
-            <h2 className="text-xl text-gray-400 font-bold pb-4">Learn more about our story and mission</h2>
+            <h2 className="text-xl text-gray-400 font-bold pb-8">Learn more about our story and mission</h2>
             {/* main div  */}
             <div className="grid md:grid-cols-1 lg:grid-cols-4 md:gap-4 grid-rows-2">
                 {/* text div  */}

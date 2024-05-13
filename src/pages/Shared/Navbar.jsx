@@ -20,7 +20,7 @@ const Navbar = () => {
  
         const handleToggle = (e) => {
           if (e.target.checked) {
-            setTheme("synthwave");
+            setTheme("luxury");
           } else {
             setTheme("light");
           }

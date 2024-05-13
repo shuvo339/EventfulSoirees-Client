@@ -5,15 +5,16 @@ import { MdEmail } from "react-icons/md";
 import { IoLocation } from "react-icons/io5";
 import { BiSolidMessageAltDetail } from "react-icons/bi";
 
+
 const ContactUs = () => {
     const handleMessage = e => {
         e.preventDefault();
     }
     return (
-        <div className="md:mt-24 mt-12 px-2">
+        <div className="md:my-24 my-12 px-2">
             <h2 className="text-3xl md:text-5xl font-bold">Contact Us</h2>
-            <h2 className="text-xl text-gray-400 font-bold pb-4">Get in touch for inquiries or to schedule a consultation</h2>
-            <div className="flex flex-col md:flex-col-reverse lg:flex-row gap-4 lg:gap-12 bg-base-100 rounded-lg">
+            <h2 className="text-xl text-gray-400 font-bold pb-8">Get in touch for inquiries or to schedule a consultation</h2>
+            <div className="flex flex-col md:flex-col-reverse lg:flex-row gap-4 lg:gap-12 rounded-lg">
 
                 <div className="lg:w-1/2 w-full mt-2">
                     <form onSubmit={handleMessage} className="space-y-4">
@@ -32,6 +33,11 @@ const ContactUs = () => {
 
                         <button className="btn w-full bg-emerald-400 font-semibold">Send Message</button>
                     </form>
+                </div>
+                 <div className="lg:w-1/2 md:w-2/3 mx-auto w-full">
+                    <div className="">
+                        <Lottie className="" animationData={animationData} />
+                    </div>
                 </div>
                 <div className="space-y-2 pl-10 md:pl-0 mt-4 md:mt-0">
                     <div className="flex gap-4 items-center py-2">
@@ -66,11 +72,7 @@ const ContactUs = () => {
                     </div>
 
                 </div>
-                <div className="lg:w-1/2 md:w-2/3 mx-auto w-full">
-                    <div className="">
-                        <Lottie className="" animationData={animationData} />
-                    </div>
-                </div>
+               
             </div>
         </div>
     );

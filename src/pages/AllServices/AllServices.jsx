@@ -41,7 +41,7 @@ const AllServices = () => {
             </div>
             </form>
 
-            <div className="grid md:grid-cols-2 gap-4">
+            <div className="space-y-10">
                 {
                      services?.map(service=><ServiceCard key={service._id} service={service}></ServiceCard>)
                 }

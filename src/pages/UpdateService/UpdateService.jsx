@@ -1,10 +1,22 @@
 import axios from "axios";
 import Swal from "sweetalert2";
-import { useLoaderData } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
+import { useEffect, useState } from "react";
+import Lottie from "lottie-react";
+import animationData from "../../assets/spinner.json";
+import { useParams } from "react-router-dom";
 
 const UpdateService = () => {
-    const service = useLoaderData();
+    const [service, setService]=useState({});
+    const [loading, setLoading]=useState(true);
+    const {id} = useParams();
+    useEffect(()=>{
+    axios(`https://b9-a11-eventful-soirees-server.vercel.app/services/${id}`, {withCredentials:true})
+    .then(data=>{
+      setService(data.data)
+      setLoading(false)
+    })
+  }, [])
     const {
         _id,
         serviceName,
@@ -13,6 +25,7 @@ const UpdateService = () => {
         price,
         description,
       } = service;
+      console.log(service);
 
       const handleUpdateService=(e)=>{
         e.preventDefault();
@@ -36,6 +49,9 @@ const UpdateService = () => {
             }
             form.reset();
         })
+    }
+    if(loading){
+        return <Lottie className="w-48 mx-auto mt-16" animationData={animationData} />
     }
     return (
         <div className="mb-6">

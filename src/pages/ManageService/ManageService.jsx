@@ -22,12 +22,14 @@ const ManageService = () => {
         return <Lottie className="w-48 mx-auto mt-16" animationData={animationData} />
     }
     return (
-        <div className="my-10">
+        <div className="my-8">
             <Helmet>
                 <title>EventfulSoirees | Manage</title>
             </Helmet>
-            <h2 className="text-3xl font-semibold text-center">My Services</h2>
-            <div className="grid md:grid-cols-2 gap-6 mt-6">
+            <div className="h-20 bg-blue-100 flex justify-center items-center">
+            <h2 className="text-3xl font-semibold">My Services</h2>
+            </div>
+            <div className="grid md:grid-cols-2 gap-6 mt-8">
                 {
                     services?.map(service=><ManageServiceCard key={service._id} services={services} setServices={setServices} service={service}></ManageServiceCard>)
                 }

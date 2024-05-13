@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { Fade } from "react-awesome-reveal";
 
 const ServiceCard = ({ service }) => {
   const {
@@ -12,9 +13,12 @@ const ServiceCard = ({ service }) => {
     providerImage,
   } = service;
   return (
-    <div className="p-4 rounded-md shadow-md border space-y-3">
-      <img className="rounded-lg h-80 w-full" src={imgURL} alt="" />
-    <div className="space-y-3 flex flex-col">
+    <Fade>
+    <div className=" rounded-md flex flex-col md:flex-row-reverse gap-4 md:gap-8 shadow-md space-y-3 border border-opacity-70 border-[#9ACCC9]">
+      <div className="md:w-1/2">
+      <img className="h-80 w-full object-cover" src={imgURL} alt="" />
+      </div>
+    <div className="space-y-3 md:w-1/2 flex flex-col px-4">
     <h2 className="text-3xl font-semibold">{serviceName}</h2>
       <p className="opacity-95 grow">{description}</p>
      <div className="flex gap-12">
@@ -27,9 +31,9 @@ const ServiceCard = ({ service }) => {
         <span className="font-semibold">{serviceArea}</span>
       </p>
      </div>
-      <div className="flex gap-4 items-center py-2">
+      <div className="flex gap-4 items-center">
         <div className="avatar">
-          <div className="w-16 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+          <div className="w-16 rounded-full ring ring-[#9ACCC9] ring-offset-base-100 ring-offset-2">
             <img src={providerImage} />
           </div>
         </div>
@@ -38,9 +42,11 @@ const ServiceCard = ({ service }) => {
           <span className=" text-xl font-semibold">{providerName}</span>
         </h2>
       </div>
+       <Link to={`/details/${_id}`}><button className="btn bg-[#9ACCC9] w-full mt-3">View Details</button></Link>
     </div>
-      <Link to={`/details/${_id}`}><button className="btn bg-emerald-400 w-full mt-3">View Details</button></Link>
+     
     </div>
+    </Fade>
   );
 };
 

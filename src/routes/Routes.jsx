@@ -65,7 +65,6 @@ import ServiceToDo from './../pages/ServiceToDo/ServiceToDo';
         {
           path: "/update/:id",
           element:<PrivateRoute><UpdateService></UpdateService></PrivateRoute>,
-          loader: ({params})=>fetch(`https://b9-a11-eventful-soirees-server.vercel.app/services/${params.id}`)
         },
       ],
     },
