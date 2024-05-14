@@ -41,6 +41,7 @@ import ServiceToDo from './../pages/ServiceToDo/ServiceToDo';
         {
           path: "/services",
           element:<AllServices></AllServices>,
+          loader: ()=>fetch('https://b9-a11-eventful-soirees-server.vercel.app/servicecount')
         },
         {
           path: "/details/:id",

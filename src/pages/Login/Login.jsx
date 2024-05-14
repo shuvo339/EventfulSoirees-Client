@@ -23,9 +23,7 @@ const Login = () => {
         axios.post('https://b9-a11-eventful-soirees-server.vercel.app/jwt', user, {withCredentials:true})
         .then(data=>{
           if(data.data.success){
-            setTimeout(()=>{
               navigate(location?.state ? location.state : '/', {replace:true})
-            }, 3000)
           }
         })
       })
@@ -41,9 +39,7 @@ const Login = () => {
         axios.post('https://b9-a11-eventful-soirees-server.vercel.app/jwt', {email: res?.user?.email}, {withCredentials:true})
         .then(data=>{
           if(data.data.success){
-            setTimeout(()=>{
               navigate(location?.state ? location.state : '/', {replace:true})
-            }, 3000)
           }
         })
       })

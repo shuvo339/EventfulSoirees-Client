@@ -4,23 +4,44 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import Lottie from "lottie-react";
 import animationData from "../../assets/spinner.json";
+import { useLoaderData } from "react-router-dom";
 
 const AllServices = () => {
     const [services, setServices] = useState([]);
     const [search, setSearch]=useState('');
     const [loading, setLoading]=useState(true);
+    const [currentPage, setCurrentPage] = useState(1);
+    const { count } = useLoaderData();
 
+    const itemsPerPage = 6;
+    const numberOfPages = Math.ceil(count / itemsPerPage)
+    const pages = [...Array(numberOfPages).keys()].map(p=>p+1);
+
+  
+    const url =`https://b9-a11-eventful-soirees-server.vercel.app/all-services?search=${search}&page=${currentPage}&size=${itemsPerPage}`;
     useEffect(()=>{
-        axios(`https://b9-a11-eventful-soirees-server.vercel.app/all-services?search=${search}`)
+        axios(url)
         .then(data=>{
             setServices(data.data)
             setLoading(false)
         })
-    }, [search])
+    }, [search, currentPage, url])
     const handleSearch=e=>{
         e.preventDefault();
         const text= e.target.search.value;
         setSearch(text);
+        setCurrentPage(0)
+    }
+
+    const handlePrev = () => {
+        if (currentPage > 1) {
+            setCurrentPage(currentPage - 1)
+        }
+    }
+    const handleNext = () => {
+        if (currentPage < pages.length) {
+            setCurrentPage(currentPage + 1)
+        }
     }
 
     if(loading){
@@ -46,6 +67,13 @@ const AllServices = () => {
                      services?.map(service=><ServiceCard key={service._id} service={service}></ServiceCard>)
                 }
             </div>
+                <div className="flex justify-center items-center mt-10">
+            <button onClick={handlePrev} className="btn mr-2 bg-slate-300 btn-sm">Prev</button>
+                {
+                    pages.map(page => <button onClick={() => setCurrentPage(page)} className={currentPage === page ? 'bg-[#9ACCC9] btn text-white mr-2 btn-sm' : 'btn bg-gray-800 mr-2 text-white btn-sm'} key={page}>{page}</button>)
+                }
+                <button onClick={handleNext} className="btn ml-2 bg-slate-300 btn-sm">Next</button>
+                </div>
         </div>
     );
 };

@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react';
 import faqImg from '../../../assets/faq.png';
 import { Bounce } from "react-awesome-reveal";
+
 const Faqs = () => {
     const [faqs, setFaqs]=useState([]);
     useEffect(()=>{
-        fetch('/faqs.json')
+        fetch('/faq.json')
         .then(res=>res.json())
         .then(data=>setFaqs(data))
     }, [])

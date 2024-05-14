@@ -52,9 +52,7 @@ const Register = () => {
         googleLogin()
         .then(()=>{
           toast.success("You have logged in successfully")
-          setTimeout(()=>{
             navigate(location?.state ? location.state : '/')
-          }, 3000)
         })
         .catch(error=>{
           toast.error(error.message.split(":")[1])
