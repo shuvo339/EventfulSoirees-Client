@@ -13,7 +13,7 @@ const AllServices = () => {
     const [currentPage, setCurrentPage] = useState(1);
     const itemsPerPage = 6;
   
-    const url =`https://b9-a11-eventful-soirees-server.vercel.app/all-services?search=${search}&page=${currentPage}&size=${itemsPerPage}`;
+    const url =`https://b9-a11-eventful-soirees-server.vercel.app/services?search=${search}&page=${currentPage}&size=${itemsPerPage}`;
     useEffect(()=>{
         axios(url)
         .then(data=>{
