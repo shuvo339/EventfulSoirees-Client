@@ -31,7 +31,7 @@ const ContactUs = () => {
                         <textarea className="textarea textarea-bordered h-36 w-full" placeholder="Write your message"></textarea>
                         <br />
 
-                        <button className="btn w-full bg-emerald-400 font-semibold">Send Message</button>
+                        <button className="btn w-full bg-[#9ACCC9] font-semibold">Send Message</button>
                     </form>
                 </div>
                  <div className="lg:w-1/2 md:w-2/3 mx-auto w-full">

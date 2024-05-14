@@ -17,7 +17,7 @@ const Faqs = () => {
             <h2 className="text-xl text-gray-400 font-bold pb-8">Find answers to commonly asked questions</h2>
                 <p className='opacity-80 max-w-[700px]'>Get quick answers to common questions about Eventful Soirees. Learn how to create an account, book services, manage your listings, and much more. Our FAQ section is designed to provide you with all the information you need to make the most of your experience on is here to help.</p>
             </div>
-            <div className='w-full md:w-1/3 h-full'>
+            <div className='w-full md:w-1/3 h-full md:mt-24 lg:mt-0 mt-0'>
             <Bounce>
                 <img className='h-full' src={faqImg} alt="" />
             </Bounce>

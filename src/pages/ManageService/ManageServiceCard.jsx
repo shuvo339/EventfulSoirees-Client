@@ -46,7 +46,7 @@ return (
   <div className="space-y-3 flex flex-col">
   <h2 className="text-3xl font-semibold">{serviceName}</h2>
     <p className="opacity-95 grow">{description}</p>
-   <div className="flex gap-12">
+   <div className="flex gap-2 flex-col md:flex-row md:gap-12">
    <p className="text-lg">
       <span className="opacity-85">Service Price: </span>
       <span className="font-semibold">${price}</span>
