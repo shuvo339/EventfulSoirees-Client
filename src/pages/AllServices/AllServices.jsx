@@ -4,19 +4,14 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import Lottie from "lottie-react";
 import animationData from "../../assets/spinner.json";
-import { useLoaderData } from "react-router-dom";
 
 const AllServices = () => {
     const [services, setServices] = useState([]);
+    const [count, setCount] = useState(0);
     const [search, setSearch]=useState('');
     const [loading, setLoading]=useState(true);
     const [currentPage, setCurrentPage] = useState(1);
-    const { count } = useLoaderData();
-
     const itemsPerPage = 6;
-    const numberOfPages = Math.ceil(count / itemsPerPage)
-    const pages = [...Array(numberOfPages).keys()].map(p=>p+1);
-
   
     const url =`https://b9-a11-eventful-soirees-server.vercel.app/all-services?search=${search}&page=${currentPage}&size=${itemsPerPage}`;
     useEffect(()=>{
@@ -26,6 +21,24 @@ const AllServices = () => {
             setLoading(false)
         })
     }, [search, currentPage, url])
+
+
+    useEffect(() => {
+        const getCount = async () => {
+          const { data } = await axios(
+            `http://localhost:5000/servicecount?search=${search}`
+          )
+    
+          setCount(data.count)
+          setCurrentPage(1)
+        }
+        getCount()
+      }, [search])
+
+
+    const numberOfPages = Math.ceil(count / itemsPerPage)
+    const pages = [...Array(numberOfPages).keys()].map(p=>p+1);
+
     const handleSearch=e=>{
         e.preventDefault();
         const text= e.target.search.value;
