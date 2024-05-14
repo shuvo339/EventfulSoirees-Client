@@ -26,7 +26,7 @@ const AllServices = () => {
     useEffect(() => {
         const getCount = async () => {
           const { data } = await axios(
-            `http://localhost:5000/servicecount?search=${search}`
+            `https://b9-a11-eventful-soirees-server.vercel.app/servicecount?search=${search}`
           )
     
           setCount(data.count)
