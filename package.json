@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@emotion/react": "^11.11.4",
+    "@smastrom/react-rating": "^1.5.0",
     "aos": "^3.0.0-beta.6",
     "axios": "^1.6.8",
     "firebaseui": "^6.1.0",
@@ -25,6 +26,7 @@
     "react-helmet-async": "^2.0.5",
     "react-hot-toast": "^2.4.1",
     "react-icons": "^5.2.1",
+    "react-rating": "^2.0.5",
     "react-router-dom": "^6.23.0",
     "react-tooltip": "^5.26.4",
     "react-visibility-sensor": "^5.1.1",
