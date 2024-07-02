@@ -1,4 +1,3 @@
-# Assignment_ID: assignment_category_0002
 # Category: Event Management Services
 
 # Eventful-Soirees
